@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        body {
+
+
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: gainsboro;
+        }
+
+        form {
+
+
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+
+        }
+
+        label, input, button {
+
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size : 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .buttons {
+
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .add-button {
+
+
+            display: inline-block; 
+            padding: 10px 5px; 
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none; 
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class = "forms">
+
+        <form id = "songform">
+
+            <div>
+
+                <label for = "albumCover"> 앨범 커버 링크: </label>
+                <input type = "url" id = "albumCover" name = "albumCover">
+
+            </div>
+
+            <div>
+
+                <label for="songName">노래 제목:</label>
+                <input type="text" id="songName" name="songName" required>
+
+            </div>
+
+            <div>
+
+                <label for="genre">장르:</label>
+                <input type="text" id="genre" name="genre" >
+
+            </div>
+
+            <div>
+
+                <label for="artist">가수:</label>
+                <input type="text" id="artist" name="artist" required>
+
+            </div>
+
+            <div>
+
+                <label for="album">앨범:</label>
+                <input type="text" id="album" name="album" >
+                
+            </div>
+
+            <div>
+
+                <label for="release">발매:</label>
+                <input type="text" id="release" name="release" >
+                
+            </div>
+
+            <div>
+
+                <label for="prod">작곡:</label>
+                <input type="text" id="prod" name="prod" >
+                
+            </div>
+
+            <div class ="buttons">
+
+                <a href = "index.html" class = "add-button"> Home </a>
+                <button type = "submit" > ADD </button>
+                
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+    <script>
+
+        document.getElementById('songform').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+
+                alert("게시물이 추가됩니다");
+
+        });
+
+    </script>
+    
+</body>
+</html>
