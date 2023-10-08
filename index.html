@@ -10,15 +10,43 @@
 
     <style>
 
+        #top h1, #top p {
+
+            font : Courier, monospace;
+        }
+
         body { 
 
             font-family : 'Courier New', Courier, monospace;
             text-align: center;
         }
 
+        table {
+
+            width : 100%;
+            margin-top: 20px;
+            border: solid white;
+        }
+
+        th, td {
+
+            padding : 15px;
+            text-align: center;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        th {
+
+            background-color: gainsboro;
+        }
+
+
         .playlist-item {
 
-            border: 1px solid #ddd;
+            border: 1px solid white;
             padding: 20px;
             margin: 20px;
             display: inline-block;
@@ -27,8 +55,8 @@
 
         .albumcover {
 
-            width: 150px;
-            height: 150px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             margin-bottom: 10px;
         }
@@ -40,31 +68,116 @@
 
 <body>
 
-<h1>  My Playlist </h1> 
-
 <div class = "playlist-container">
 
-    <div class = "playlist-item">
+    <div id = "top" >
 
-        <img src = "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Fd0617dbe625456f4ead2cdd00fcff3cb.1000x1000x1.jpg" alt = "Album Cover" class = "albumcover">
-        <h2> City Girls</h2>
-        <p>  장르 : Hip hop, R&B </p>
-        <p>  가수 : Chris Brown ft. Young Thug</p>
-        <p>  앨범 : Slime & B</p>
-        <p>  발매 : 2020/05/20</p>
-        <p>  작곡 : The Audibles </p>
+        <h1> My Playlist </h1>
+        <p> These are my favorite songs, try them if you want to.</p>
+        <p> You can add, edit, and delete the songs and you can also leave a message (if you want to)</p>
+
+    </div> <!--- END OF TOP --->
+
+    <main>
+
+        <table>
+
+            <tr>
+
+                <th></th>
+                <th>노래</th>
+                <th>장르</th>
+                <th>가수</th>
+                <th>앨범</th>
+                <th>발매</th>
+                <th>작곡</th>
+            </tr>
+
+            <tr>
+
+                <td><img src="https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Fd0617dbe625456f4ead2cdd00fcff3cb.1000x1000x1.jpg" alt="Album Cover" class="albumcover"></td>
+                <td>City Girls</td>
+                <td>Hip Hop, R&B</td>
+                <td>Chris Brown ft. Young Thug</td>
+                <td>Slime & B</td>
+                <td>2020/05/20</td>
+                <td>The Audibles</td>
+
+            </tr>
+
+            <tr>
+
+                <td><img src="https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F4486e319b31440254384fb70e1ea5cf5.1000x1000x1.jpg" alt="Album Cover" class="albumcover"></td>
+                <td>Favorite Song</td>
+                <td>R&B</td>
+                <td>Toosii</td>
+                <td>NAUJOUR</td>
+                <td>2023/02/17</td>
+                <td>ADELSO & Tatiana Manaois</td>
+
+            </tr>
+
+            <tr>
+
+                <td><img src = "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Ffc630a7ffd8f58d5f7ec5db7b698e426.1000x1000x1.jpg" alt = "Album Cover" class = "albumcover"></td>
+                <td>Biking (Solo)</td>
+                <td>R&B</td>
+                <td>Frank Ocean</td>
+                <td>blonded RADIO - Singles</td>
+                <td>2017/05/16 </td>
+                <td>Caleb Laven, Jarami & Ging </td>
+
+            </tr>
+
+            <tr>
+
+                <td><img src = "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Fa3fbdc794fe61394d787c5f66c69a0bd.1000x1000x1.png" alt = "Album Cover" class = "albumcover"></td>
+                <td>All 4 Nothing (I’m So In Love)</td>
+                <td>Pop</td>
+                <td>LAUV</td>
+                <td>All 4 Nothing (Japan Exclusive)</td>
+                <td>2022/04/08 </td>
+                <td>DallasK & Cirkut </td>
+
+            </tr>
+
+            <tr>
+                
+                <td><img src = "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F406e4efd476a6c0e9ba2803f5d75518b.1000x1000x1.png" alt = "Album Cover" class = "albumcover"> </td>
+                <td>Thinking About You</td>
+                <td>House, Pop </td>
+                <td>Calvin Harris ft. Ayah Marar </td>
+                <td>18 Months (Deluxe Edition)</td>
+                <td>2013/08/02</td>
+                <td>Calvin Harris</td>
+
+            </tr>
+
+            <tr>
+                
+                <td><img src = "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F37b950ac9bbc378c55929d68036f6581.640x640x1.jpg" alt = "Album Cover" class = "albumcover"></td>
+                <td>double take </td>
+                <td> R&B, Pop </td>
+                <td>dhruv </td>
+                <td>rapunzel</td>
+                <td>2019/05/24</td>
+                <td>Frankie Scoca</td>
+
+            </tr>
 
 
+        </table>
 
-    </div> <!--- END OF PLAYLIST-ITEM --->
-
-
-
+    </main> <!--- END of main--->
 
 
-</div> <!--- END OF DIV--->
+    <footer>
 
+
+    </footer>
+
+</div> <!--- END OF playlist-container --->
     
-</body> <!--- END OF BODY --->
+</body>
 
 </html>
