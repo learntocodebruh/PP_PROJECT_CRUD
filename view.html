@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <style>
+        
+        .song-link {
+            color: inherit; 
+            text-decoration: none; 
+        }
+
+        .song-link:hover {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="song-details">
+        
+             
+        <h2>Song Name: <span id="songNameDisplay"></span></h2>
+        
+
+        <a href="edit.html">
+            <button>Edit</button>
+        </a>
+        <button onclick="confirmDelete()">Delete</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            return urlParams;
+        }
+
+        function displaySongDetails() {
+            let params = getQueryParams();
+            let songName = params.get('id');
+            document.getElementById('songNameDisplay').textContent = songName;
+        }
+
+        function confirmDelete() {
+            let confirmation = confirm("게시물을 삭제할까요?");
+            if (confirmation) {
+                
+                alert("게시물이 삭제되었습니다.");
+            }
+        }
+
+        
+        displaySongDetails();
+    </script>
+
+</body>
+</html>

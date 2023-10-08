@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Song</title>
+    
+</head>
+
+<body>
+
+<div class="forms">
+
+    <form id="editSongForm">
+
+        <div>
+            <label for="albumCover">앨범 커버 링크:</label>
+            <input type="url" id="albumCover" name="albumCover" value="">
+        </div>
+
+        <div>
+            <label for="songName">노래 제목:</label>
+            <input type="text" id="songName" name="songName" required value="">
+        </div>
+
+        <div>
+            <label for="genre">장르:</label>
+            <input type="text" id="genre" name="genre" value="">
+        </div>
+
+        <div>
+            <label for="artist">가수:</label>
+            <input type="text" id="artist" name="artist" required value="">
+        </div>
+
+        <div>
+            <label for="album">앨범:</label>
+            <input type="text" id="album" name="album" value="">
+        </div>
+
+        <div>
+            <label for="release">발매:</label>
+            <input type="text" id="release" name="release" value="">
+        </div>
+
+        <div>
+            <label for="prod">작곡:</label>
+            <input type="text" id="prod" name="prod" value="">
+        </div>
+
+        <div>
+            <button type="submit">EDIT</button>
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+    document.getElementById('editSongForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        
+        if (confirm("게시물을 수정할까요?")) {
+         
+        }
+    });
+</script>
+
+</body>
+</html>
