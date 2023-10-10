@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="my.css">
     <title>Document</title>
 
 
@@ -27,6 +28,12 @@
 
             font-family : 'Courier New', Courier, monospace;
             text-align: center;
+
+            background-image: url('https://www.billboard.com/wp-content/uploads/media/03-Kanye-West-performs-Sunday-Service-during-the-2019-Coachella-billboard-1548.jpg?w=1024');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         table {
@@ -46,6 +53,13 @@
             border-bottom: 1px solid black;
         }
 
+        table a {
+
+
+            text-decoration: none;
+            color : blue;
+        }
+
         th {
 
             background-color: gainsboro;
@@ -63,10 +77,12 @@
 
         .albumcover {
 
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
-            margin-bottom: 10px;
+            margin-top: 5px;
+            align-items: center;
+            justify-content: center;
         }
 
         .add-button {
@@ -96,8 +112,8 @@
     <div id = "top" >
 
         <h1> My Playlist </h1>
-        <p> These are my favorite songs, try them if you want to.</p>
-        <p> You can add, edit, and delete the songs and you can also leave a message (if you want to)</p>
+        <p> These are my favorite songs, try them if you want to</p>
+        <p> You can add edit and delete the songs</p>
         <a href = "add.html" class = "add-button"> ADD</a>
 
     </div> <!--- END OF TOP --->

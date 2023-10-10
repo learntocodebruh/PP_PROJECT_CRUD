@@ -4,7 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="my.css">
     <title>Edit Song</title>
+
+    <style>
+        
+        body {
+
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            background-image: url('https://pyxis.nymag.com/v1/imgs/1d3/761/167f9245314ca4aaa2c510f546ddd832f9-BFA-27078-3349617.jpg'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .forms {
+
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%; 
+            max-width: 500px; 
+
+        }
+
+        form div {
+
+            margin: 10px 0;
+
+        }
+
+        label {
+
+            display: block;
+            margin-bottom: 5px;
+
+        }
+
+        input[type="text"],
+        input[type="url"],
+
+        button {
+
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        .button-container {
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+        }
+
+        .home-button, button {
+
+            font-family: 'Courier New', Courier, monospace; 
+            width: 48%;               
+            display: inline-block;      
+            background-color: red;     
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+    </style>
     
 </head>
 
@@ -15,42 +105,45 @@
     <form id="editSongForm">
 
         <div>
-            <label for="albumCover">앨범 커버 링크:</label>
+            <label for="albumCover">앨범 커버 링크</label>
             <input type="url" id="albumCover" name="albumCover" value="">
         </div>
 
         <div>
-            <label for="songName">노래 제목:</label>
+            <label for="songName">노래 제목*</label>
             <input type="text" id="songName" name="songName" required value="">
         </div>
 
         <div>
-            <label for="genre">장르:</label>
+            <label for="genre">장르</label>
             <input type="text" id="genre" name="genre" value="">
         </div>
 
         <div>
-            <label for="artist">가수:</label>
+            <label for="artist">가수*</label>
             <input type="text" id="artist" name="artist" required value="">
         </div>
 
         <div>
-            <label for="album">앨범:</label>
+            <label for="album">앨범</label>
             <input type="text" id="album" name="album" value="">
         </div>
 
         <div>
-            <label for="release">발매:</label>
+            <label for="release">발매</label>
             <input type="text" id="release" name="release" value="">
         </div>
 
         <div>
-            <label for="prod">작곡:</label>
+            <label for="prod">작곡</label>
             <input type="text" id="prod" name="prod" value="">
         </div>
 
-        <div>
-            <button type="submit">EDIT</button>
+        <div class="button-container">
+
+            <a href="index.html" class="home-button">Home</a>
+            <button onclick="confirmEdit()">Edit</button>
+
         </div>
 
     </form>
@@ -62,9 +155,9 @@
         e.preventDefault();
 
         
-        if (confirm("노래를 수정할까요?")) {
+        if (confirm("게시물을 수정할까요?")) {
 
-            alert("노래가 수정되었습니다.")
+            alert("게시물이 수정되었습니다.")
             e.target.reset();
          
         }

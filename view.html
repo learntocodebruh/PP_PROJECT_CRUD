@@ -1,57 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="my.css">
 
     <style>
+
+
+        body {
+
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gainsboro;
+
+            background-image: url('https://d3uqg2ap1kpnl9.cloudfront.net/wp-content/uploads/2018/10/07004151/M.WENDZINSKI-FOR-EYESIGHT-01-18-09.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
         
         .song-link {
+
             color: inherit; 
             text-decoration: none; 
         }
 
         .song-link:hover {
+
             text-decoration: underline; 
         }
+
+        .song-details {
+
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .button-container {
+
+            margin-top: 20px;
+
+        }
+
+        button, .button-container a {
+
+            color : white;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+        }
+
+        .edit-button, .home-button, button {
+
+        background-color: red;
+        font-family: 'Courier New', Courier, monospace; 
+        display: inline-block; 
+        text-decoration: none;
+
+    }
+
+    button {
+
+        color: white;
+
+    }
+
     </style>
+
 </head>
+
 <body>
 
     <div class="song-details">
         
-             
-        <h2>Song Name: <span id="songNameDisplay"></span></h2>
+        <h2><span id="songNameDisplay"></span></h2>
         
+        <div class = "song-info">
 
-        <a href="edit.html">
-            <button>Edit</button>
-        </a>
-        <button onclick="confirmDelete()">Delete</button>
+        </div>
+
+        <div class="button-container">
+
+            <a href="edit.html" class="edit-button">Edit</a>
+            <a href="index.html" class="home-button">Home</a>
+            <button onclick="confirmDelete()">Delete</button>
+
+        </div>
+
     </div>
 
     <script>
+
+        const songs = {
+
+            "CityGirls": {
+
+                name: "City Girls",
+                genre: "Hip Hop, R&B",
+                artist: "Chris Brown ft. Young Thug",
+                album: "Slime & B",
+                release: "2020/05/20",
+                composer: "The Audibles"
+            },
+
+            "FavoriteSong": {
+
+                name: "Favorite Song",
+                genre: "Hip Hop, R&B",
+                artist: "Toosii",
+                album: "NAUJOUR",
+                release: "2023/02/17",
+                composer: "ADELSO & Tatiana Manaois"
+
+            },
+
+            "BikingSolo": {
+
+                name: "Biking Solo",
+                genre: "R&B",
+                artist: "Frank Ocean",
+                album: "blonded RADIO - Singles",
+                release: "2017/05/16",
+                composer: "Caleb Laven, Jarami & Ging"
+            },
+
+            "All4Nothing": {
+
+                name: "All 4 Nothing",
+                genre: "Pop",
+                artist: "Lauv",
+                album: "All 4 Nothing (Japan Exclusive)",
+                release: "2022/04/08",
+                composer: "DallasK & Cirkut"
+
+            },
+
+            "ThinkingAboutYou": {
+
+                name: "Thinking About You",
+                genre: "House, Pop",
+                artist: "Calvin Harris ft. Ayah Marar",
+                album: "18 Months (Deluxe Edition)",
+                release: "2013/08/02",
+                composer: "Calvin Harris"
+                
+            },
+
+            "DoubleTake": {
+
+                name: "Double Take",
+                genre: "R&B, Pop",
+                artist: "dhruv",
+                album: "rapunzel",
+                release: "2019/05/24",
+                composer: "Frankie Scoca"
+
+            }
+
+
+        }
         function getQueryParams() {
+
             let queryString = window.location.search;
             let urlParams = new URLSearchParams(queryString);
             return urlParams;
+
         }
 
         function displaySongDetails() {
+
             let params = getQueryParams();
-            let songName = params.get('id');
-            document.getElementById('songNameDisplay').textContent = songName;
+            let songKey = params.get('id');
+            let song = songs[songKey]; 
+
+        if (song) {
+            document.getElementById('songNameDisplay').textContent = song.name;
+            
+            let detailsDiv = document.querySelector('.song-info');
+            
+            detailsDiv.innerHTML += `<p>Genre: ${song.genre}</p>`;
+            detailsDiv.innerHTML += `<p>Artist: ${song.artist}</p>`;
+            detailsDiv.innerHTML += `<p>Album: ${song.album}</p>`;
+            detailsDiv.innerHTML += `<p>Release Date: ${song.release}</p>`;
+            detailsDiv.innerHTML += `<p>Composer: ${song.composer}</p>`;
+
+        } else {
+            console.error('Song not found!');
         }
+    }
+
 
         function confirmDelete() {
-            let confirmation = confirm("게시물을 삭제할까요?");
+
+            let confirmation = confirm("해당 노래를 삭제할까요?");
             if (confirmation) {
                 
-                alert("게시물이 삭제되었습니다.");
+                alert("노래가 삭제되었습니다.");
             }
         }
 
-        
         displaySongDetails();
+
     </script>
 
 </body>

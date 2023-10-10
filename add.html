@@ -4,6 +4,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="my.css">
     <title>Document</title>
 
 
@@ -11,18 +12,22 @@
 
         body {
 
-
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: gainsboro;
+            background-color: white;
+
+            background-image: url('https://s.abcnews.com/images/Entertainment/190422_vod_debrief_lenners_crop_hpMain_16x9_1600.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         form {
-
 
             background-color: white;
             padding: 40px;
@@ -30,7 +35,7 @@
 
         }
 
-        label, input, button {
+        label, input, button, a.add-button {
 
             width: 100%;
             margin-bottom: 20px;
@@ -40,12 +45,17 @@
             border: 1px solid #ccc;
         }
 
-        button {
+        button, a.add-button {
 
             cursor: pointer;
             background-color: red;
             color: white;
             border: none;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .buttons {
@@ -53,24 +63,9 @@
             display: flex;
             text-decoration: none;
             justify-content: center;
-            gap: 30px;
+            gap: 100px;
         }
 
-        .add-button {
-
-
-            display: inline-block; 
-            padding: 10px 5px; 
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none; 
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
     </style>
 
@@ -84,49 +79,49 @@
 
             <div>
 
-                <label for = "albumCover"> 앨범 커버 링크: </label>
+                <label for = "albumCover"> 앨범 커버 링크 </label>
                 <input type = "url" id = "albumCover" name = "albumCover">
 
             </div>
 
             <div>
 
-                <label for="songName">노래 제목:</label>
+                <label for="songName">노래 제목 *</label>
                 <input type="text" id="songName" name="songName" required>
 
             </div>
 
             <div>
 
-                <label for="genre">장르:</label>
+                <label for="genre">장르</label>
                 <input type="text" id="genre" name="genre" >
 
             </div>
 
             <div>
 
-                <label for="artist">가수:</label>
+                <label for="artist">가수 *</label>
                 <input type="text" id="artist" name="artist" required>
 
             </div>
 
             <div>
 
-                <label for="album">앨범:</label>
+                <label for="album">앨범</label>
                 <input type="text" id="album" name="album" >
                 
             </div>
 
             <div>
 
-                <label for="release">발매:</label>
+                <label for="release">발매</label>
                 <input type="text" id="release" name="release" >
                 
             </div>
 
             <div>
 
-                <label for="prod">작곡:</label>
+                <label for="prod">작곡</label>
                 <input type="text" id="prod" name="prod" >
                 
             </div>
@@ -137,8 +132,6 @@
                 <button type = "submit" > ADD </button>
                 
             </div>
-
-
 
         </form>
 
